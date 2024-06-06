@@ -13,6 +13,9 @@ $light: #f3eeff;
 $btn-padding-y: 0.75rem;
 $btn-padding-x: 2.5rem;
 $grid-gutter-width: 0.5rem;
+$badge-border-radius: 5rem;
+$input-border-radius: 5rem;
+$btn-border-radius: 5rem;
 
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
 @import "../../bootstrap/scss/variables";
@@ -24,9 +27,13 @@ $card-bg: $dark;
 $card-color: $info;
 $card-border-radius: 2rem;
 
-$badge-border-radius: 20rem;
-$input-border-radius: 10rem;
-$button-border-radius: 20rem;
+$custom-theme-colors: (
+  "epicode-1": #5726c3,
+  "epicode-2": #8625a5,
+  "epicode-3": #cb2376,
+);
+
+$theme-colors: map-merge($theme-colors, $custom-theme-colors);
 
 $custom-font-sizes: (
   7: 0.9rem,
@@ -46,6 +53,23 @@ $custom-border-widths: (
 );
 
 $border-widths: map-merge($border-widths, $custom-border-widths);
+
+$custom-grid-breakpoints: (
+  3xl: 1600px,
+  4xl: 1800px,
+);
+
+$grid-breakpoints: map-merge($grid-breakpoints, $custom-grid-breakpoints);
+
+$custom-container-max-widths: (
+  3xl: 1520px,
+  4xl: 1720px,
+);
+
+$container-max-widths: map-merge(
+  $container-max-widths,
+  $custom-container-max-widths
+);
 
 // 5. Include remainder of required parts
 @import "../../bootstrap/scss/maps";
